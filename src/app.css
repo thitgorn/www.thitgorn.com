@@ -1,0 +1,30 @@
+body {
+  margin: 1% !important;
+  padding: 0;
+  font-family: sans-serif;
+  background: #DF3B57 !important;
+}
+
+.demo7-ball {
+  width: 50px;
+  height: 50px;
+  border-radius: 99px;
+  position: absolute;
+  z-index: -1;
+  border: 1px solid lightblue !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-header {
+  color: #D8A47F;
+}

@@ -16,6 +16,14 @@ export class App extends React.Component {
     this.state = { mouse: [], now: 't' }
   }
 
+  componentDidMount () {
+    if (process.env.NODE_ENV!=='development') {
+      if (!window.location.host.startsWith('www')) {
+        window.location = (window.location.protocol + '//' + 'www.' + window.location.host + window.location.pathname)
+      }
+    }
+  }
+
   handleMouseMove = ({ pageX, pageY }) => {
     this.setState({
       mouse: [pageX - 25, pageY - 25],
@@ -45,10 +53,9 @@ export class App extends React.Component {
         scale: spring(0),
         x: spring(mouseX),
         y: spring(mouseY),
-      }
+      },
     }]
     return (
-
       <Router>
         <TransitionMotion willLeave={this.willLeave} styles={styles}>
           {

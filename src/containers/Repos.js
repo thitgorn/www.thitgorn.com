@@ -33,7 +33,7 @@ export class Repo extends Component {
     this.setState({ loading: true })
     const id = await setInterval(() => {
       try {
-        Axios.get(`https://api.github.com/users/thitgorn/repos?page=${page}`)
+        Axios.get(`https://api.github.com/users/ziveso/repos?page=${page}`)
           .then(response => {
             const data = response.data
             if (data.length <= 0) {

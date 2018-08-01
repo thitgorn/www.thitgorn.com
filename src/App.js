@@ -19,7 +19,7 @@ export class App extends React.Component {
   componentDidMount () {
     if (process.env.NODE_ENV!=='development') {
       if (!window.location.host.startsWith('www')) {
-        window.location = (window.location.protocol + '//' + 'www.' + window.location.host + window.location.pathname)
+        window.location = `${window.location.protocol}//www.${window.location.host}${window.location.pathname}`
       }
     }
   }
@@ -36,13 +36,11 @@ export class App extends React.Component {
     this.handleMouseMove(e.touches[0])
   }
 
-  willLeave = styleCell => {
-    return {
-      ...styleCell.style,
-      opacity: spring(0, leavingSpringConfig),
-      scale: spring(2, leavingSpringConfig),
-    }
-  }
+  willLeave = styleCell => ({
+    ...styleCell.style,
+    opacity: spring(0, leavingSpringConfig),
+    scale: spring(2, leavingSpringConfig),
+  })
 
   render () {
     const { mouse: [mouseX, mouseY], now } = this.state
@@ -76,8 +74,8 @@ export class App extends React.Component {
                     key={key}
                     className="demo7-ball"
                     style={{
-                      opacity: opacity,
-                      scale: scale,
+                      opacity,
+                      scale,
                       transform: `translate3d(${x}px, ${y}px, 0) scale(${scale})`,
                       WebkitTransform: `translate3d(${x}px, ${y}px, 0) scale(${scale})`,
                     }} />

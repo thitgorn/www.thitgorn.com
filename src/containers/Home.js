@@ -12,7 +12,7 @@ export class Home extends React.Component {
           width: '100%', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
           }}>
           <h1 className="display-3 text-header">THITGORN.COM</h1>
-          <LinkTo to="https://thitgorn.github.io" text="Profile website" hover="https://thigorn.github.io" />
+          <LinkTo to="https://ziveso.github.io" text="Profile website" hover="https://ziveso.github.io" />
           <LinkTo to="/repos" text="Repositories / Works" hover="My works" />
           <Footer />
         </div>
